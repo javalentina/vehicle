@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Vehicle Details</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Cost</th>
+        <th>Year</th>
+        <th>Mileage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${vehicle.id}"></td>
+        <td th:text="${vehicle.cost}"></td>
+        <td th:text="${vehicle.year}"></td>
+        <td th:text="${vehicle.mileage}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

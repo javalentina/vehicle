@@ -1,28 +1,39 @@
-package org.example;
+package org.model;
 
-import com.sun.javafx.beans.IDProperty;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "vehicle")
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private double cost;
-    private  int year;
+    private int year;
     private double mileage;
 
-    public int getId() {
+    public Vehicle(double cost, int year, double mileage) {
+        this.cost = cost;
+        this.year = year;
+        this.mileage = mileage;
+    }
+
+    public Vehicle() {
+
+    }
+
+    public long getId() {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public double getCost() {
         return cost;
@@ -37,6 +48,7 @@ public class Vehicle {
     }
 
     public void setYear(int year) {
+
         this.year = year;
     }
 
@@ -45,6 +57,7 @@ public class Vehicle {
     }
 
     public void setMileage(double mileage) {
+
         this.mileage = mileage;
     }
 
