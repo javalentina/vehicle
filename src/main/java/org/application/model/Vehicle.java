@@ -1,4 +1,4 @@
-package org.model;
+package org.application.model;
 
 
 import javax.persistence.Entity;

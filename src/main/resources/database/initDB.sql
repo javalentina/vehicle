@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS vehicle
+(
+    id SERIAL PRIMARY KEY,
+    cost NUMERIC(10,2) NOT NULL,
+    year INTEGER NOT NULL,
+    mileage NUMERIC(20,2) NOT NULL
+);

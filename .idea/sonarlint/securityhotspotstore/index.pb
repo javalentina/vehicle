@@ -1,8 +1,4 @@
 
-V
-&src/main/java/org/example/Vehicle.java,e/3/e33d4fee6bac84eacf325992ccd718f041b88816
-S
-#src/main/java/org/example/Main.java,0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 c
@@ -11,7 +7,13 @@ c
 -src/main/java/org/service/VehicleService.java,e/8/e8405a50c545b41989ffa862d8aae66e496d24c9
 T
 $src/main/java/org/model/Vehicle.java,d/f/df2097abdbca313d964774d596f483070c334825
-Q
-!src/main/java/org/model/Main.java,6/5/65e5a171e58c0690451796d26618d575a4941481
 K
 src/main/java/org/Main.java,8/5/8562f6886f731299c0b6925e0dca2ed59ddafa0c
+c
+3src/main/java/org/repository/VehicleRepository.java,b/6/b66a262664316c69b9b0dec8d7bc9ba83da9fa55
+W
+'src/main/java/org/Application/Main.java,3/f/3fcab058754a1621de2dbda2203c0eb3c6499786
+]
+-src/main/java/org/Application/Aplication.java,1/3/13b529026582b422627f1b8f369806224538f225
+^
+.src/main/java/org/Application/Application.java,b/b/bb63e2210c1d9f9514013253ea7723d1262c5f64
