@@ -1,11 +1,7 @@
 package org.application.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -17,15 +13,29 @@ public class Vehicle {
     private int year;
     private double mileage;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vehicle_model_id")
+    private VehicleModel vehicleModel;
+
     public Vehicle(double cost, int year, double mileage) {
         this.cost = cost;
         this.year = year;
         this.mileage = mileage;
-    }
 
+    }
     public Vehicle() {
 
     }
+    public VehicleModel getVehicleModel() {
+        return vehicleModel;
+    }
+
+
+
+    public void setVehicleModel(VehicleModel vehicleModel) {
+        this.vehicleModel = vehicleModel;
+    }
+
 
     public long getId() {
         return id;

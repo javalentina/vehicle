@@ -5,6 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,6 +32,11 @@
         <th>Cost</th>
         <th>Year</th>
         <th>Mileage</th>
+        <th>Model Id</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Tank</th>
+        <th>Seating</th>
     </tr>
     </thead>
     <tbody>
@@ -24,6 +45,11 @@
         <td th:text="${vehicle.cost}"></td>
         <td th:text="${vehicle.year}"></td>
         <td th:text="${vehicle.mileage}"></td>
+        <td th:text="${vehicle.vehicleModel.id}"></td>
+        <td th:text="${vehicle.vehicleModel.name}"></td>
+        <td th:text="${vehicle.vehicleModel.bodyType}"></td>
+        <td th:text="${vehicle.vehicleModel.tankCapacity}"></td>
+        <td th:text="${vehicle.vehicleModel.seatingCapacity}"></td>
     </tr>
     </tbody>
 </table>

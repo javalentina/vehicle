@@ -813,8 +813,8 @@ false Zulu
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
-    <database id="3" parent="1" name="template0"/>
-    <database id="4" parent="1" name="template1"/>
+    <database id="3" parent="1" name="template1"/>
+    <database id="4" parent="1" name="template0"/>
     <database id="5" parent="1" name="vehicles">
       <ObjectId>24586</ObjectId>
       <OwnerName>root</OwnerName>

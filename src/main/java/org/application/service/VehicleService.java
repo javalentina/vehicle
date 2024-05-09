@@ -12,10 +12,13 @@ public class VehicleService {
 
     @Autowired
     public VehicleService(VehicleRepository vehicleRepository) {
+
         this.vehicleRepository = vehicleRepository;
     }
 
     public List<Vehicle> getAllVehicles() {
+
         return vehicleRepository.findAll();
     }
+
 }

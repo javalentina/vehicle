@@ -33,19 +33,16 @@
         <th>Body Type</th>
         <th>Tank Capacity</th>
         <th>Seating Capacity</th>
-        <th> year</th>
-        <th> mileage</th>
-        <th> cost</th>
-        <th> Vehicle id</th>
+
     </tr>
     </thead>
     <tbody>
-    <tr th:each="car : ${vehicleModels}">
-        <td th:text="${vehicleModels.id}"></td>
-        <td th:text="${vehicleModels.name}"></td>
-        <td th:text="${vehicleModels.bodyType}"></td>
-        <td th:text="${vehicleModels.tankCapacity}"></td>
-        <td th:text="${vehicleModels.seatingCapacity}"></td>
+    <tr th:each="vehicleModel : ${vehicleModels} ">
+        <td th:text="${vehicleModel.id}"></td>
+        <td th:text="${vehicleModel.name}"></td>
+        <td th:text="${vehicleModel.bodyType}"></td>
+        <td th:text="${vehicleModel.tankCapacity}"></td>
+        <td th:text="${vehicleModel.seatingCapacity}"></td>
 
     </tr>
     </tbody>

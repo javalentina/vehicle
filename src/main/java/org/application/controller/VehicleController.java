@@ -24,6 +24,7 @@ public class VehicleController {
         model.addAttribute("vehicles", vehicles);
         return "vehicle";
     }
+
 }
 
 

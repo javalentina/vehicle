@@ -1,7 +1,7 @@
 package org.application.controller;
 
 import org.application.model.VehicleModel;
-import org.application.service.CarService;
+import org.application.service.VehicleModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,20 +10,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class CarController {
-    private final CarService carService;
+public class VehicleModelController {
+    private final VehicleModelService vehicleModelService;
 
     @Autowired
-    public CarController(CarService carService) {
-        this.carService = carService;
+    public VehicleModelController(VehicleModelService vehicleModelService) {
+
+        this.vehicleModelService = vehicleModelService;
     }
 
 
     @GetMapping("/vehicle-models")
     public String readAllCar(Model model) {
-        List<VehicleModel> vehicleModels = carService.getAllCars();
+        List<VehicleModel> vehicleModels = vehicleModelService.getAllVehicleModels();
         model.addAttribute("vehicleModels", vehicleModels);
-        return "car";
+        return "vehicle-models";
     }
 }
 
