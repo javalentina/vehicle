@@ -21,6 +21,8 @@ public class VehicleModel {
         return vehicles;
     }
 
+
+
     public void setVehicles(List<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }
