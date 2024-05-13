@@ -25,6 +25,7 @@
 <body>
 
 <h1>Vehicle</h1>
+<a rel="stylesheet" th:href="@{vehicle/new}">New Vehicle</a>
 <table>
     <thead>
     <tr>
@@ -37,6 +38,7 @@
         <th>Type</th>
         <th>Tank</th>
         <th>Seating</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -45,11 +47,16 @@
         <td th:text="${vehicle.cost}"></td>
         <td th:text="${vehicle.year}"></td>
         <td th:text="${vehicle.mileage}"></td>
-        <td th:text="${vehicle.vehicleModel.id}"></td>
-        <td th:text="${vehicle.vehicleModel.name}"></td>
-        <td th:text="${vehicle.vehicleModel.bodyType}"></td>
-        <td th:text="${vehicle.vehicleModel.tankCapacity}"></td>
-        <td th:text="${vehicle.vehicleModel.seatingCapacity}"></td>
+        <td th:text="${vehicle.vehicleModelId.id}"></td>
+        <td th:text="${vehicle.vehicleModelId.name}"></td>
+        <td th:text="${vehicle.vehicleModelId.bodyType}"></td>
+        <td th:text="${vehicle.vehicleModelId.tankCapacity}"></td>
+        <td th:text="${vehicle.vehicleModelId.seatingCapacity}"></td>
+        <td>
+            <a rel="stylesheet" th:href="@{/vehicle/edit(id=${vehicle.id})}">Edit</a>
+
+            <a rel="stylesheet" th:href="@{/vehicle/delete(id=${vehicle.id})}">Delete</a>
+        </td>
     </tr>
     </tbody>
 </table>

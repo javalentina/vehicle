@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Vehicle Model</title>
+</head>
+<style>
+
+
+    form {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        border:1px solid #000;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #ccc;
+    }
+</style>
+<body>
+
+<form action="/vehicle/save" method="post">
+    <input type="hidden" th:field="*{vehicle.id}">
+
+    <label for="cost">Cost:</label>
+    <input type="number" id="cost" name="cost" th:value="${vehicle.cost}"><br><br>
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year"  th:value="${vehicle.year}"><br><br>
+
+    <label for="mileage">Mileage:</label>
+    <input type="number" id="mileage" name="mileage" th:value="${vehicle.mileage}"><br><br>
+
+
+    <label for="vehicleModelId">Model:</label>
+    <select id="vehicleModelId" name="vehicleModelId">
+        <option th:value="${vehicle.vehicleModelId}" selected disabled th:text="${vehicle.vehicleModelId.getName()}"></option>
+        <option th:each="vehicleModel : ${vehicleModels}" th:value="${vehicleModel.id}" th:text="${vehicleModel.getName()}"></option>
+    </select>
+
+
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

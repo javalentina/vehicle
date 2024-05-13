@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save</title>
+</head>
+<style>
+
+
+    form {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        border:1px solid #000;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #ccc;
+    }
+</style>
+<body>
+
+<form action="/vehicle/save" method="post">
+    <label for="cost">Cost:</label>
+    <input type="text" id="cost" name="cost"><br><br>
+
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year" ><br><br>
+
+    <label for="mileage">Mileage:</label>
+    <input type="text" id="mileage" name="mileage"><br><br>
+
+    <label for="vehicleModelId">Model:</label>
+    <select id="vehicleModelId" name="vehicleModelId">
+        <option value="">Select Model</option>
+        <!-- Populate options dynamically using Thymeleaf -->
+        <option th:each="vehicleModel : ${vehicleModels}" th:value="${vehicleModel.id}" th:text="${vehicleModel.getName()}"></option>
+    </select><br><br>  <button type="submit">Save</button>
+</form>
+</body>
+</html>

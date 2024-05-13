@@ -13,6 +13,10 @@ import java.util.Map;
 
 @Controller
 public class VehicleModelController {
+    public VehicleModelService getVehicleModelService() {
+        return vehicleModelService;
+    }
+
     private final VehicleModelService vehicleModelService;
 
     @Autowired

@@ -11,7 +11,7 @@ public class VehicleModel {
     @Enumerated(EnumType.STRING)
     private BodyType bodyType;
 
-    @OneToMany(mappedBy = "vehicleModel", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vehicleModelId", fetch = FetchType.LAZY)
     private List<Vehicle> vehicles;
 
     private String name;
@@ -20,9 +20,6 @@ public class VehicleModel {
     public List<Vehicle> getVehicles() {
         return vehicles;
     }
-
-
-
     public void setVehicles(List<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }

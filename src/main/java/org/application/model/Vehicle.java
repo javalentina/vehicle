@@ -8,32 +8,33 @@ import javax.persistence.*;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private double cost;
     private int year;
     private double mileage;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vehicle_model_id")
-    private VehicleModel vehicleModel;
+    private VehicleModel vehicleModelId;
 
-    public Vehicle(double cost, int year, double mileage) {
+    public Vehicle(double cost, int year, double mileage, VehicleModel vehicleModelId) {
         this.cost = cost;
         this.year = year;
         this.mileage = mileage;
-
+        this.vehicleModelId = vehicleModelId;
     }
+
     public Vehicle() {
 
     }
-    public VehicleModel getVehicleModel() {
-        return vehicleModel;
+    public VehicleModel getVehicleModelId() {
+        return vehicleModelId;
     }
 
 
 
-    public void setVehicleModel(VehicleModel vehicleModel) {
-        this.vehicleModel = vehicleModel;
+    public void setVehicleModelId(VehicleModel vehicleModel) {
+        this.vehicleModelId = vehicleModel;
     }
 
 
@@ -41,7 +42,7 @@ public class Vehicle {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
