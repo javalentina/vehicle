@@ -33,12 +33,13 @@ public class Vehicle {
 
 
 
-    public void setVehicleModelId(VehicleModel vehicleModel) {
-        this.vehicleModelId = vehicleModel;
+    public void setVehicleModelId(VehicleModel vehicleModelId) {
+
+        this.vehicleModelId = vehicleModelId;
     }
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

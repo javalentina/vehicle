@@ -57,7 +57,7 @@
     <label for="vehicleModelId">Model:</label>
     <select id="vehicleModelId" name="vehicleModelId">
         <option th:value="${vehicle.vehicleModelId}" selected disabled th:text="${vehicle.vehicleModelId.getName()}"></option>
-        <option th:each="vehicleModel : ${vehicleModels}" th:value="${vehicleModel.id}" th:text="${vehicleModel.getName()}"></option>
+        <option th:each="vehicleModel : ${vehicleModels}" th:value="${vehicleModel.id}" th:text="${vehicleModel.getName() + ' ' + vehicleModel.getBodyType() + ' ' + vehicleModel.getTankCapacity() + ' ' + vehicleModel.getSeatingCapacity()}"></option>
     </select>
 
 
