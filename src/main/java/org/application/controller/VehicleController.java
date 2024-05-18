@@ -1,25 +1,31 @@
 package org.application.controller;
 
+import org.application.dto.VehicleDTO;
+import org.application.dto.VehicleModelDTO;
 import org.application.model.Vehicle;
 import org.application.model.VehicleModel;
 import org.application.service.VehicleModelService;
 import org.application.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
+@RequestMapping("/vehicles")
 public class VehicleController {
     public VehicleService getVehicleService() {
         return vehicleService;
     }
 
     private final VehicleService vehicleService;
-    private final VehicleModelService vehicleModelService; // Inject VehicleModelService
+    private final VehicleModelService vehicleModelService;
 
 
 
@@ -28,31 +34,30 @@ public class VehicleController {
         this.vehicleService = vehicleService;
         this.vehicleModelService = vehicleModelService;
     }
-
-    @GetMapping("/vehicles")
+    @GetMapping("")
     public String readAllVehicles(Model model) {
         List<Vehicle> vehicles = vehicleService.getAllVehicles();
         model.addAttribute("vehicles", vehicles);
-        return "vehicle";
+        return "vehicles";
     }
 
-    @GetMapping("/vehicle/new")
+    @GetMapping("/add")
     public String newVehicle(Model model) {
         Vehicle vehicle = new Vehicle();
         List<VehicleModel> vehicleModels = vehicleModelService.getAllVehicleModels(); // Assuming you have a method to get all vehicle models
         model.addAttribute("vehicle", vehicle);
         model.addAttribute("vehicleModels", vehicleModels);
-        return "vehicle-new";
+        return "vehicle-add";
 
     }
 
-    @PostMapping("/vehicle/save")
+    @PostMapping("/save")
     public String saveVehicle(@ModelAttribute Vehicle vehicle) {
         vehicleService.saveVehicle(vehicle);
         return "redirect:/vehicles";
     }
 
-    @GetMapping("/vehicle/edit")
+    @GetMapping("/edit")
     public ModelAndView editVehicle(@RequestParam Long id) {
         ModelAndView mav = new ModelAndView("vehicle-edit");
         Vehicle vehicle = vehicleService.getVehicle(id);
@@ -64,11 +69,25 @@ public class VehicleController {
         return mav;
     }
 
-    @GetMapping("/vehicle/delete")
+    @GetMapping("/delete")
     public String deleteVehicle(@RequestParam Long id) {
         vehicleService.deleteVehicle(id);
         return "redirect:/vehicles";
     }
+    @GetMapping("/api")
+    public ResponseEntity<List<VehicleDTO>> getAllVehiclesJson(){
+        List<Vehicle> vehicles = vehicleService.getAllVehicles();
+        List<VehicleDTO> vehicleDTOs = vehicles.stream().map(this::convertToDTO).collect(Collectors.toList());
+        return new ResponseEntity<>(vehicleDTOs,HttpStatus.OK);
+    }
+    public VehicleDTO convertToDTO(Vehicle vehicle){
+
+            VehicleModel vehicleModel = vehicle.getVehicleModelId();
+            VehicleModelDTO vehicleModelDTO = new VehicleModelDTO( vehicleModel.getId(),vehicleModel.getBodyType(),vehicleModel.getName(),vehicleModel.getTankCapacity(),vehicleModel.getSeatingCapacity());
+            return new VehicleDTO(vehicle.getId(), vehicle.getCost(), vehicle.getYear(), vehicle.getMileage(), vehicleModelDTO);
+
+    }
+
 
 }
 

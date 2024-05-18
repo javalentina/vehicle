@@ -25,7 +25,7 @@
 <body>
 
 <h1>Vehicle</h1>
-<a rel="stylesheet" th:href="@{vehicle/new}">New Vehicle</a>
+<a rel="stylesheet" th:href="@{/vehicles/add}">New Vehicle</a>
 <table>
     <thead>
     <tr>
@@ -53,9 +53,9 @@
         <td th:text="${vehicle.vehicleModelId.tankCapacity}"></td>
         <td th:text="${vehicle.vehicleModelId.seatingCapacity}"></td>
         <td>
-            <a rel="stylesheet" th:href="@{/vehicle/edit(id=${vehicle.id})}">Edit</a>
+            <a rel="stylesheet" th:href="@{/vehicles/edit(id=${vehicle.id})}">Edit</a>
 
-            <a rel="stylesheet" th:href="@{/vehicle/delete(id=${vehicle.id})}">Delete</a>
+            <a rel="stylesheet" th:href="@{/vehicles/delete(id=${vehicle.id})}">Delete</a>
         </td>
     </tr>
     </tbody>

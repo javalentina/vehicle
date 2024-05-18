@@ -41,7 +41,7 @@
 </style>
 <body>
 
-<form action="/vehicle/save" method="post">
+<form action="/vehicles/save" method="post">
     <label for="cost">Cost:</label>
     <input type="text" id="cost" name="cost"><br><br>
 
@@ -55,7 +55,7 @@
     <select id="vehicleModelId" name="vehicleModelId">
         <option value="">Select Model</option>
         <!-- Populate options dynamically using Thymeleaf -->
-        <option th:each="vehicleModel : ${vehicleModels}" th:value="${vehicleModel.id}" th:text="${vehicleModel.getName()}"></option>
+        <option th:each="vehicleModel : ${vehicleModels}" th:value="${vehicleModel.id}" th:text="${vehicleModel.getName() + ' ' + vehicleModel.getBodyType() + ' ' + vehicleModel.getTankCapacity() + ' ' + vehicleModel.getSeatingCapacity()}"></option>
     </select><br><br>  <button type="submit">Save</button>
 </form>
 </body>
