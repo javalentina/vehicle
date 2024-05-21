@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drivers</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        a{
+            color:#000;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Drivers</h1>
+<br />
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Enterprise Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="driver : ${drivers} ">
+        <td th:text="${driver.id}"></td>
+        <td th:text="${driver.name}"></td>
+        <td th:text="${driver.salary}"></td>
+        <td th:text="${driver.enterprise_id.name}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

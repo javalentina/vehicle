@@ -4,8 +4,8 @@ CREATE TABLE IF NOT EXISTS vehicle
     cost             NUMERIC(10, 2) NOT NULL,
     year             INTEGER        NOT NULL,
     mileage          NUMERIC(20, 2) NOT NULL,
-    vehicle_model_id INT REFERENCES vehicle_model (id) ON DELETE SET NULL ON UPDATE CASCADE,
-    enterprise_id    INT REFERENCES enterprise (id) ON DELETE SET NULL ON UPDATE CASCADE
+    vehicle_model_id INT REFERENCES vehicle_model (id),
+    enterprise_id    INT REFERENCES enterprise (id)
 );
 
 CREATE TABLE IF NOT EXISTS vehicle_model
@@ -27,16 +27,12 @@ CREATE TABLE IF NOT EXISTS driver
     id     SERIAL PRIMARY KEY,
     name   VARCHAR(255)   NOT NULL,
     salary NUMERIC(10, 2) NOT NULL,
-    enterprise_id    INT REFERENCES enterprise (id) ON DELETE SET NULL ON UPDATE CASCADE
+    enterprise_id    INT REFERENCES enterprise (id)
 );
 CREATE TABLE IF NOT EXISTS driverTask(
     id     SERIAL PRIMARY KEY,
     vehicle_id INT REFERENCES vehicle (id),
-    driver_id  INT REFERENCES driver (id) ON DELETE SET NULL ON UPDATE CASCADE,
+    driver_id  INT REFERENCES driver (id),
     is_active BOOLEAN
 );
-ALTER TABLE vehicle ADD COLUMN enterprise_id INT REFERENCES enterprise (id);
-ALTER TABLE enterprise DROP COLUMN vehicle_id;
-ALTER TABLE enterprise DROP COLUMN driver_id;
-ALTER TABLE driver ADD COLUMN enterprise_id    INT REFERENCES enterprise (id) ON DELETE SET NULL ON UPDATE CASCADE;
 

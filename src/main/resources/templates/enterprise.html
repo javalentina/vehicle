@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        a{
+            color:#000;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Enterprise</h1>
+<br />
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>City</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="enterprise : ${enterprises} ">
+        <td th:text="${enterprise.id}"></td>
+        <td th:text="${enterprise.name}"></td>
+        <td th:text="${enterprise.city}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
