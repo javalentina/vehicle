@@ -3,17 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <Grants>1||-9223372036854775808|c|G
-1||10|c|G
-1||10|C|G
-1||10|T|G
-4||-9223372036854775808|c|G
-4||10|c|G
-4||10|C|G
-4||10|T|G</Grants>
-      <IntrospectionStateNumber>876</IntrospectionStateNumber>
+      <IntrospectionStateNumber>932</IntrospectionStateNumber>
       <ServerVersion>16.2</ServerVersion>
-      <StartupTime>1715456818</StartupTime>
+      <StartupTime>1715610341</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -822,54 +814,54 @@ false Zulu
 13452||10|C|G
 13452||-9223372036854775808|U|G
 13452||10|U|G</Grants>
-      <IntrospectionStateNumber>876</IntrospectionStateNumber>
+      <IntrospectionStateNumber>932</IntrospectionStateNumber>
       <ObjectId>24586</ObjectId>
       <OwnerName>root</OwnerName>
     </database>
-    <role id="4" parent="1" name="pg_database_owner">
+    <role id="4" parent="1" name="pg_checkpoint">
+      <ObjectId>4544</ObjectId>
+    </role>
+    <role id="5" parent="1" name="pg_create_subscription">
+      <ObjectId>6304</ObjectId>
+    </role>
+    <role id="6" parent="1" name="pg_database_owner">
       <ObjectId>6171</ObjectId>
     </role>
-    <role id="5" parent="1" name="pg_read_all_data">
-      <ObjectId>6181</ObjectId>
+    <role id="7" parent="1" name="pg_execute_server_program">
+      <ObjectId>4571</ObjectId>
     </role>
-    <role id="6" parent="1" name="pg_write_all_data">
-      <ObjectId>6182</ObjectId>
-    </role>
-    <role id="7" parent="1" name="pg_monitor">
+    <role id="8" parent="1" name="pg_monitor">
       <ObjectId>3373</ObjectId>
       <RoleGrants>3374
 3375
 3377</RoleGrants>
     </role>
-    <role id="8" parent="1" name="pg_read_all_settings">
+    <role id="9" parent="1" name="pg_read_all_data">
+      <ObjectId>6181</ObjectId>
+    </role>
+    <role id="10" parent="1" name="pg_read_all_settings">
       <ObjectId>3374</ObjectId>
     </role>
-    <role id="9" parent="1" name="pg_read_all_stats">
+    <role id="11" parent="1" name="pg_read_all_stats">
       <ObjectId>3375</ObjectId>
     </role>
-    <role id="10" parent="1" name="pg_stat_scan_tables">
-      <ObjectId>3377</ObjectId>
-    </role>
-    <role id="11" parent="1" name="pg_read_server_files">
+    <role id="12" parent="1" name="pg_read_server_files">
       <ObjectId>4569</ObjectId>
     </role>
-    <role id="12" parent="1" name="pg_write_server_files">
-      <ObjectId>4570</ObjectId>
-    </role>
-    <role id="13" parent="1" name="pg_execute_server_program">
-      <ObjectId>4571</ObjectId>
-    </role>
-    <role id="14" parent="1" name="pg_signal_backend">
+    <role id="13" parent="1" name="pg_signal_backend">
       <ObjectId>4200</ObjectId>
     </role>
-    <role id="15" parent="1" name="pg_checkpoint">
-      <ObjectId>4544</ObjectId>
+    <role id="14" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
     </role>
-    <role id="16" parent="1" name="pg_use_reserved_connections">
+    <role id="15" parent="1" name="pg_use_reserved_connections">
       <ObjectId>4550</ObjectId>
     </role>
-    <role id="17" parent="1" name="pg_create_subscription">
-      <ObjectId>6304</ObjectId>
+    <role id="16" parent="1" name="pg_write_all_data">
+      <ObjectId>6182</ObjectId>
+    </role>
+    <role id="17" parent="1" name="pg_write_server_files">
+      <ObjectId>4570</ObjectId>
     </role>
     <role id="18" parent="1" name="postgres">
       <BypassRls>1</BypassRls>
@@ -5431,7 +5423,7 @@ false Zulu
     <schema id="265" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>876</IntrospectionStateNumber>
+      <IntrospectionStateNumber>932</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>794</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -5444,7 +5436,31 @@ false Zulu
       <StateNumber>782</StateNumber>
       <OwnerName>root</OwnerName>
     </sequence>
-    <sequence id="267" parent="265" name="model_id_seq">
+    <sequence id="267" parent="265" name="driver_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>49260</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>920</StateNumber>
+      <OwnerName>root</OwnerName>
+    </sequence>
+    <sequence id="268" parent="265" name="drivertask_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>49272</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>924</StateNumber>
+      <OwnerName>root</OwnerName>
+    </sequence>
+    <sequence id="269" parent="265" name="enterprise_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>49246</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>919</StateNumber>
+      <OwnerName>root</OwnerName>
+    </sequence>
+    <sequence id="270" parent="265" name="model_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>40975</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
@@ -5452,33 +5468,215 @@ false Zulu
       <StateNumber>814</StateNumber>
       <OwnerName>root</OwnerName>
     </sequence>
-    <sequence id="268" parent="265" name="vehicle_id_seq">
+    <sequence id="271" parent="265" name="vehicle_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>24587</ObjectId>
-      <SequenceIdentity>1(15)</SequenceIdentity>
+      <SequenceIdentity>1(26)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>745</StateNumber>
       <OwnerName>root</OwnerName>
     </sequence>
-    <table id="269" parent="265" name="model">
+    <table id="272" parent="265" name="driver">
+      <ObjectId>49261</ObjectId>
+      <StateNumber>931</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>root</OwnerName>
+    </table>
+    <table id="273" parent="265" name="drivertask">
+      <ObjectId>49273</ObjectId>
+      <StateNumber>924</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>root</OwnerName>
+    </table>
+    <table id="274" parent="265" name="enterprise">
+      <ObjectId>49247</ObjectId>
+      <StateNumber>922</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>root</OwnerName>
+    </table>
+    <table id="275" parent="265" name="model">
       <ObjectId>40976</ObjectId>
       <StateNumber>814</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
-    <table id="270" parent="265" name="vehicle">
+    <table id="276" parent="265" name="vehicle">
       <ObjectId>24588</ObjectId>
-      <StateNumber>809</StateNumber>
+      <StateNumber>928</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
-    <table id="271" parent="265" name="vehicle_model">
+    <table id="277" parent="265" name="vehicle_model">
       <ObjectId>32793</ObjectId>
       <StateNumber>819</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
-    <column id="272" parent="269" name="id">
+    <column id="278" parent="272" name="id">
+      <DasType>integer|0s</DasType>
+      <DefaultExpression>nextval(&apos;driver_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>920</StateNumber>
+      <SequenceId>49260</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="279" parent="272" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>920</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="280" parent="272" name="salary">
+      <DasType>numeric(10,2 digit)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>920</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="281" parent="272" name="enterprise_id">
+      <DasType>integer|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>931</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="282" parent="272" name="driver_enterprise_id_fkey">
+      <ColNames>enterprise_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49294</ObjectId>
+      <OnDelete>set-null</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>931</StateNumber>
+      <RefTableId>49247</RefTableId>
+      <RefTableName>enterprise</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="283" parent="272" name="driver_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49265</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>920</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="284" parent="272" name="driver_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49266</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>920</StateNumber>
+      <UnderlyingIndexId>49265</UnderlyingIndexId>
+    </key>
+    <column id="285" parent="273" name="id">
+      <DasType>integer|0s</DasType>
+      <DefaultExpression>nextval(&apos;drivertask_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>924</StateNumber>
+      <SequenceId>49272</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="286" parent="273" name="vehicle_id">
+      <DasType>integer|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>924</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="287" parent="273" name="driver_id">
+      <DasType>integer|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>924</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="288" parent="273" name="is_active">
+      <DasType>boolean|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>924</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <foreign-key id="289" parent="273" name="drivertask_vehicle_id_fkey">
+      <ColNames>vehicle_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49279</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>924</StateNumber>
+      <RefTableId>24588</RefTableId>
+      <RefTableName>vehicle</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="290" parent="273" name="drivertask_driver_id_fkey">
+      <ColNames>driver_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49284</ObjectId>
+      <OnDelete>set-null</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>924</StateNumber>
+      <RefTableId>49261</RefTableId>
+      <RefTableName>driver</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="291" parent="273" name="drivertask_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49277</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>924</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="292" parent="273" name="drivertask_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49278</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>924</StateNumber>
+      <UnderlyingIndexId>49277</UnderlyingIndexId>
+    </key>
+    <column id="293" parent="274" name="id">
+      <DasType>integer|0s</DasType>
+      <DefaultExpression>nextval(&apos;enterprise_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>919</StateNumber>
+      <SequenceId>49246</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="294" parent="274" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>919</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="295" parent="274" name="city">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>919</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="296" parent="274" name="enterprise_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49253</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>919</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="297" parent="274" name="enterprise_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49254</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>919</StateNumber>
+      <UnderlyingIndexId>49253</UnderlyingIndexId>
+    </key>
+    <column id="298" parent="275" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;model_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5487,35 +5685,35 @@ false Zulu
       <SequenceId>40975</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="273" parent="269" name="body_type">
+    <column id="299" parent="275" name="body_type">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>814</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="274" parent="269" name="name">
+    <column id="300" parent="275" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>814</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="275" parent="269" name="tank_capacity">
+    <column id="301" parent="275" name="tank_capacity">
       <DasType>numeric(10,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>814</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="276" parent="269" name="seating_capacity">
+    <column id="302" parent="275" name="seating_capacity">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>814</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="277" parent="269" name="model_pkey">
+    <index id="303" parent="275" name="model_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>40982</ObjectId>
@@ -5524,14 +5722,14 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="278" parent="269" name="model_pkey">
+    <key id="304" parent="275" name="model_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>40983</ObjectId>
       <Primary>1</Primary>
       <StateNumber>814</StateNumber>
       <UnderlyingIndexId>40982</UnderlyingIndexId>
     </key>
-    <column id="279" parent="270" name="id">
+    <column id="305" parent="276" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;vehicle_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5540,34 +5738,40 @@ false Zulu
       <SequenceId>24587</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="280" parent="270" name="cost">
+    <column id="306" parent="276" name="cost">
       <DasType>numeric(10,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>745</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="281" parent="270" name="year">
+    <column id="307" parent="276" name="year">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>745</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="282" parent="270" name="mileage">
+    <column id="308" parent="276" name="mileage">
       <DasType>numeric(20,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>745</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="283" parent="270" name="vehicle_model_id">
+    <column id="309" parent="276" name="vehicle_model_id">
       <DasType>bigint|0s</DasType>
       <Position>5</Position>
       <StateNumber>822</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="284" parent="270" name="fk_model">
+    <column id="310" parent="276" name="enterprise_id">
+      <DasType>integer|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>928</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="311" parent="276" name="fk_model">
       <ColNames>vehicle_model_id</ColNames>
       <ObjectId>40970</ObjectId>
       <RefColNames>id</RefColNames>
@@ -5577,7 +5781,18 @@ false Zulu
       <RefTableName>vehicle_model</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="285" parent="270" name="vehicle_pkey">
+    <foreign-key id="312" parent="276" name="vehicle_enterprise_id_fkey">
+      <ColNames>enterprise_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49289</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>928</StateNumber>
+      <RefTableId>49247</RefTableId>
+      <RefTableName>enterprise</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="313" parent="276" name="vehicle_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24592</ObjectId>
@@ -5586,14 +5801,14 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="286" parent="270" name="vehicle_pkey">
+    <key id="314" parent="276" name="vehicle_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24593</ObjectId>
       <Primary>1</Primary>
       <StateNumber>745</StateNumber>
       <UnderlyingIndexId>24592</UnderlyingIndexId>
     </key>
-    <column id="287" parent="271" name="id">
+    <column id="315" parent="277" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;car_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5602,35 +5817,35 @@ false Zulu
       <SequenceId>32792</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="288" parent="271" name="body_type">
+    <column id="316" parent="277" name="body_type">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="289" parent="271" name="name">
+    <column id="317" parent="277" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>782</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="290" parent="271" name="tank_capacity">
+    <column id="318" parent="277" name="tank_capacity">
       <DasType>numeric(10,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>782</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="291" parent="271" name="seating_capacity">
+    <column id="319" parent="277" name="seating_capacity">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>782</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="292" parent="271" name="car_pkey">
+    <index id="320" parent="277" name="car_pkey">
       <ColNames>id</ColNames>
       <ObjectId>32799</ObjectId>
       <Primary>1</Primary>
@@ -5638,7 +5853,7 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="293" parent="271" name="car_pkey">
+    <key id="321" parent="277" name="car_pkey">
       <ObjectId>32800</ObjectId>
       <Primary>1</Primary>
       <StateNumber>782</StateNumber>
