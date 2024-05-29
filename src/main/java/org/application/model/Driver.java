@@ -1,6 +1,7 @@
 package org.application.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Driver {
@@ -12,13 +13,25 @@ public class Driver {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "enterprise_id")
-    private Enterprise enterprise_id;
+    private Enterprise enterprise;
 
-    public Driver(Long id, String name, double salary, Enterprise enterprise_id) {
+    @OneToMany(mappedBy = "driver", fetch = FetchType.LAZY)
+    private List<DriverTask> driverTasks;
+
+    public DriverTask getActiveTask() {
+        return driverTasks.stream()
+                .filter(DriverTask::getIsActive)
+                .findFirst()
+                .orElse(null);
+    }
+
+
+
+    public Driver(Long id, String name, double salary, Enterprise enterprise) {
         this.id = id;
         this.name = name;
         this.salary = salary;
-        this.enterprise_id = enterprise_id;
+        this.enterprise = enterprise;
     }
 
     public Driver() {
@@ -49,11 +62,18 @@ public class Driver {
         this.salary = salary;
     }
 
-    public Enterprise getEnterprise_id() {
-        return enterprise_id;
+    public Enterprise getEnterprise() {
+        return enterprise;
     }
 
-    public void setEnterprise_id(Enterprise enterprise_id) {
-        this.enterprise_id = enterprise_id;
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
+    }
+    public List<DriverTask> getDriverTasks() {
+        return driverTasks;
+    }
+
+    public void setDriverTasks(List<DriverTask> driverTasks) {
+        this.driverTasks = driverTasks;
     }
 }

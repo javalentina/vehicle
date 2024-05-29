@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>932</IntrospectionStateNumber>
+      <IntrospectionStateNumber>952</IntrospectionStateNumber>
       <ServerVersion>16.2</ServerVersion>
-      <StartupTime>1715610341</StartupTime>
+      <StartupTime>1716965082</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -814,7 +814,7 @@ false Zulu
 13452||10|C|G
 13452||-9223372036854775808|U|G
 13452||10|U|G</Grants>
-      <IntrospectionStateNumber>932</IntrospectionStateNumber>
+      <IntrospectionStateNumber>952</IntrospectionStateNumber>
       <ObjectId>24586</ObjectId>
       <OwnerName>root</OwnerName>
     </database>
@@ -5423,7 +5423,7 @@ false Zulu
     <schema id="265" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>932</IntrospectionStateNumber>
+      <IntrospectionStateNumber>952</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>794</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -5439,7 +5439,7 @@ false Zulu
     <sequence id="267" parent="265" name="driver_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>49260</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <SequenceIdentity>1(4)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>920</StateNumber>
       <OwnerName>root</OwnerName>
@@ -5447,7 +5447,7 @@ false Zulu
     <sequence id="268" parent="265" name="drivertask_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>49272</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <SequenceIdentity>1(5)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>924</StateNumber>
       <OwnerName>root</OwnerName>
@@ -5455,7 +5455,7 @@ false Zulu
     <sequence id="269" parent="265" name="enterprise_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>49246</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <SequenceIdentity>1(3)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>919</StateNumber>
       <OwnerName>root</OwnerName>
@@ -5482,9 +5482,9 @@ false Zulu
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
-    <table id="273" parent="265" name="drivertask">
+    <table id="273" parent="265" name="driver_task">
       <ObjectId>49273</ObjectId>
-      <StateNumber>924</StateNumber>
+      <StateNumber>939</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
@@ -5599,7 +5599,6 @@ false Zulu
     </column>
     <foreign-key id="289" parent="273" name="drivertask_vehicle_id_fkey">
       <ColNames>vehicle_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>49279</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
@@ -5610,7 +5609,6 @@ false Zulu
     </foreign-key>
     <foreign-key id="290" parent="273" name="drivertask_driver_id_fkey">
       <ColNames>driver_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>49284</ObjectId>
       <OnDelete>set-null</OnDelete>
       <OnUpdate>cascade</OnUpdate>
@@ -5623,7 +5621,6 @@ false Zulu
     </foreign-key>
     <index id="291" parent="273" name="drivertask_pkey">
       <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>49277</ObjectId>
       <Primary>1</Primary>
       <StateNumber>924</StateNumber>
@@ -5631,7 +5628,6 @@ false Zulu
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="292" parent="273" name="drivertask_pkey">
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>49278</ObjectId>
       <Primary>1</Primary>
       <StateNumber>924</StateNumber>

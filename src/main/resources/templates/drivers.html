@@ -35,6 +35,8 @@
         <th>Name</th>
         <th>Salary</th>
         <th>Enterprise Name</th>
+        <th>Vehicle Name </th>
+        <th>Is Active</th>
     </tr>
     </thead>
     <tbody>
@@ -42,7 +44,10 @@
         <td th:text="${driver.id}"></td>
         <td th:text="${driver.name}"></td>
         <td th:text="${driver.salary}"></td>
-        <td th:text="${driver.enterprise_id.name}"></td>
+        <td th:text="${driver.enterprise.name}"></td>
+        <td th:text="${driver.activeTask != null ? driver.activeTask.vehicle.vehicleModelId.name : 'No car'}"></td>
+        <td th:text="${driver.activeTask != null ? driver.activeTask.active : 'Not on drive '}"></td>
+
     </tr>
     </tbody>
 </table>

@@ -21,4 +21,8 @@ public class DriverService {
     public List<Driver> getAllDriver(){
         return driverRepository.findAll();
     }
+    public List<Driver> getAllDriversWithTask(){
+        return driverRepository.findAllDriversWithTask();
+    }
+
 }

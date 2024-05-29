@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS driver
     salary NUMERIC(10, 2) NOT NULL,
     enterprise_id    INT REFERENCES enterprise (id)
 );
-CREATE TABLE IF NOT EXISTS driverTask(
+CREATE TABLE IF NOT EXISTS driver_task(
     id     SERIAL PRIMARY KEY,
     vehicle_id INT REFERENCES vehicle (id),
     driver_id  INT REFERENCES driver (id),

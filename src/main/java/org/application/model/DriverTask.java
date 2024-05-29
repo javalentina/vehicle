@@ -19,8 +19,7 @@ public class DriverTask {
     @Column(name = "is_active", nullable = false)
     private Boolean isActive;
 
-    public DriverTask(Long id, Vehicle vehicle, Driver driver, Boolean isActive) {
-        this.id = id;
+    public DriverTask(Vehicle vehicle, Driver driver, Boolean isActive) {
         this.vehicle = vehicle;
         this.driver = driver;
         this.isActive = isActive;
@@ -54,11 +53,11 @@ public class DriverTask {
         this.driver = driver;
     }
 
-    public Boolean getActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
-    public void setActive(Boolean active) {
+    public void setIsActive(Boolean active) {
         isActive = active;
     }
 }
