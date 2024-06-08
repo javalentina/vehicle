@@ -20,6 +20,7 @@ public class EnterpriseService {
 
     public List<Enterprise> getAllEnterprise() {
         return enterpriseRepository.findAll();
+
     }
 
 }

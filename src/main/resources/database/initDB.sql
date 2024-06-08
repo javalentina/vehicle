@@ -18,21 +18,41 @@ CREATE TABLE IF NOT EXISTS vehicle_model
 );
 CREATE TABLE IF NOT EXISTS enterprise
 (
-    id         SERIAL PRIMARY KEY,
-    name       VARCHAR(255) NOT NULL,
-    city       VARCHAR(255) NOT NULL
+    id   SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS driver
 (
-    id     SERIAL PRIMARY KEY,
-    name   VARCHAR(255)   NOT NULL,
-    salary NUMERIC(10, 2) NOT NULL,
-    enterprise_id    INT REFERENCES enterprise (id)
+    id            SERIAL PRIMARY KEY,
+    name          VARCHAR(255)   NOT NULL,
+    salary        NUMERIC(10, 2) NOT NULL,
+    enterprise_id INT REFERENCES enterprise (id)
 );
-CREATE TABLE IF NOT EXISTS driver_task(
-    id     SERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS driver_task
+(
+    id         SERIAL PRIMARY KEY,
     vehicle_id INT REFERENCES vehicle (id),
     driver_id  INT REFERENCES driver (id),
-    is_active BOOLEAN
+    is_active  BOOLEAN
 );
+CREATE TABLE IF NOT EXISTS users
+(
+    id   SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    role VARCHAR(255)   NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS manager
+(
+    id   SERIAL PRIMARY KEY,
+    user_id       INT REFERENCES users (id)
+);
+CREATE TABLE IF NOT EXISTS manager_enterprise
+(
+    manager_id       INT REFERENCES manager (id),
+    enterprise_id INT REFERENCES enterprise (id),
+    PRIMARY KEY (manager_id, enterprise_id)
+);
+
 

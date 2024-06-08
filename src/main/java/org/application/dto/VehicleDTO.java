@@ -7,9 +7,9 @@ public class VehicleDTO {
     private double cost;
     private int year;
     private double mileage;
-    private VehicleModelDTO vehicleModelId;
+    private Long vehicleModelId;
 
-    public VehicleDTO(Long id, double cost, int year, double mileage, VehicleModelDTO vehicleModelId) {
+    public VehicleDTO(Long id, double cost, int year, double mileage, Long vehicleModelId) {
         this.id = id;
         this.cost = cost;
         this.year = year;
@@ -49,11 +49,11 @@ public class VehicleDTO {
         this.mileage = mileage;
     }
 
-    public VehicleModelDTO getVehicleModelId() {
+    public Long getVehicleModelId() {
         return vehicleModelId;
     }
 
-    public void setVehicleModelId(VehicleModelDTO vehicleModelId) {
+    public void setVehicleModelId(Long vehicleModelId) {
         this.vehicleModelId = vehicleModelId;
     }
 }

@@ -82,9 +82,7 @@ public class VehicleController {
     }
     public VehicleDTO convertToDTO(Vehicle vehicle){
 
-            VehicleModel vehicleModel = vehicle.getVehicleModelId();
-            VehicleModelDTO vehicleModelDTO = new VehicleModelDTO( vehicleModel.getId(),vehicleModel.getBodyType(),vehicleModel.getName(),vehicleModel.getTankCapacity(),vehicleModel.getSeatingCapacity());
-            return new VehicleDTO(vehicle.getId(), vehicle.getCost(), vehicle.getYear(), vehicle.getMileage(), vehicleModelDTO);
+            return new VehicleDTO(vehicle.getId(), vehicle.getCost(), vehicle.getYear(), vehicle.getMileage(), vehicle.getVehicleModelId().getId());
 
     }
 

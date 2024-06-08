@@ -1,11 +1,5 @@
 package org.application.dto;
 
-import org.application.dto.EnterpriseDTO;
-import org.application.model.DriverTask;
-
-import javax.persistence.*;
-import java.util.List;
-
 
 public class DriverDTO {
     private Long id;
@@ -13,15 +7,15 @@ public class DriverDTO {
     private double salary;
 
 
-    private EnterpriseDTO enterprise;
+    private Long enterpriseId;
     //private List<DriverTask> driverTasks;
 
 
-    public DriverDTO(Long id, String name, double salary, EnterpriseDTO enterprise) {
+    public DriverDTO(Long id, String name, double salary, Long enterpriseId) {
         this.id = id;
         this.name = name;
         this.salary = salary;
-        this.enterprise = enterprise; //this.driverTasks = driverTasks;
+        this.enterpriseId = enterpriseId; //this.driverTasks = driverTasks;
     }
 
 
@@ -50,12 +44,12 @@ public class DriverDTO {
         this.salary = salary;
     }
 
-    public EnterpriseDTO getEnterprise() {
-        return enterprise;
+    public Long getEnterpriseId() {
+        return enterpriseId;
     }
 
-    public void setEnterprise(EnterpriseDTO enterprise) {
-        this.enterprise = enterprise;
+    public void setEnterpriseId(Long enterpriseId) {
+        this.enterpriseId = enterpriseId;
     }
 
 

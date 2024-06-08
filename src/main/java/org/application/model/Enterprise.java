@@ -2,6 +2,7 @@ package org.application.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Enterprise {
@@ -11,6 +12,14 @@ public class Enterprise {
     private Long id;
     private String name;
     private String city;
+
+    @ManyToMany
+    @JoinTable(
+            name= "manager_enterprise",
+            joinColumns = @JoinColumn(name = "enterprise_id"),
+            inverseJoinColumns = @JoinColumn(name = "manager_id")
+    )
+    Set<Manager> managers;
 
     public Enterprise(Long id, String name, String city) {
         this.id = id;
@@ -44,5 +53,10 @@ public class Enterprise {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+
+    public Set<Manager> getManagerId() {
+        return managers;
     }
 }

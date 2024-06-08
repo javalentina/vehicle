@@ -48,17 +48,13 @@ public class DriverController {
 
     private DriverDTO convertToDTO(Driver driver) {
         List<DriverTask> driverTasks = driver.getDriverTasks();
-        EnterpriseDTO enterpriseDTO = new EnterpriseDTO(
-                driver.getEnterprise().getId(),
-                driver.getEnterprise().getName(),
-                driver.getEnterprise().getCity()
-        );
+
 
         return new DriverDTO(
                 driver.getId(),
                 driver.getName(),
                 driver.getSalary(),
-                enterpriseDTO
+                driver.getEnterprise().getId()
         );
     }
 

@@ -38,13 +38,13 @@ public class EnterpriseController {
         return "enterprise";
     }
     @GetMapping("/api")
-    public ResponseEntity<List<EnterpriseDTO>> getAllEnterpriseJson(){
+    public ResponseEntity<List<EnterpriseDTO>> getAllEnterprise(){
         List<Enterprise> enterprises = enterpriseService.getAllEnterprise();
         List<EnterpriseDTO> enterpriseDTOS = enterprises.stream().map(this::convertToDTO).collect(Collectors.toList());
         return new ResponseEntity<>(enterpriseDTOS, HttpStatus.OK);
     }
     public EnterpriseDTO convertToDTO(Enterprise enterprise){
-         return new EnterpriseDTO(enterprise.getId(), enterprise.getName(), enterprise.getCity());
+         return new EnterpriseDTO(enterprise.getId(), enterprise.getName(), enterprise.getCity(), enterprise.getManagerId());
 
     }
 }
