@@ -2,6 +2,7 @@ package org.application.service;
 
 
 import org.application.model.Enterprise;
+import org.application.model.Users;
 import org.application.repository.EnterpriseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,6 @@ public class EnterpriseService {
         return enterpriseRepository.findAll();
 
     }
+
 
 }

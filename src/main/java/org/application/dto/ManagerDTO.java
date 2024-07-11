@@ -15,7 +15,6 @@ public class ManagerDTO {
 
     public ManagerDTO(Long id, Set<Enterprise> enterpriseListId) {
         this.id = id;
-
         this.enterpriseListId = enterpriseListId.stream().map(Enterprise::getId).collect(Collectors.toSet());
     }
 

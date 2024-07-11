@@ -2,22 +2,24 @@ package org.application.model;
 
 import javax.persistence.*;
 import java.util.Set;
-@Entity
 
+@Entity
 @Table(name = "manager")
-@PrimaryKeyJoinColumn(name="id")
-public class Manager extends Users{
+@PrimaryKeyJoinColumn(name = "id")
+public class Manager extends Users {
 
     @ManyToMany
     @JoinTable(
-            name= "manager_enterprise",
+            name = "manager_enterprise",
             joinColumns = @JoinColumn(name = "manager_id"),
             inverseJoinColumns = @JoinColumn(name = "enterprise_id")
     )
     private Set<Enterprise> enterprises;
-    public Manager( String name, String password, Role role) {
+
+    public Manager(String name, String password, Role role) {
         super();
     }
+
     public Manager() {
     }
 

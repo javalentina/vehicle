@@ -12,6 +12,7 @@ public class UsersDTO {
         private Long id;
         private String name;
         private Role role;
+        private String password;
 
     public UsersDTO(Long id, String name, Role role) {
         this.id = id;
@@ -21,6 +22,9 @@ public class UsersDTO {
 
     public Long getId() {
         return id;
+    }
+    public String getPassword(){
+        return password;
     }
 
     public void setId(Long id) {

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drivers</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<h1>Register New User</h1>
+<form action="#" th:action="@{/users/register}" th:object="${newUser}" method="post">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" /><br/>
+
+    <label>Password:</label>
+    <input type="password" th:field="*{password}" /><br/>
+
+    <button type="submit">Register</button>
+</form>
+</body>
+</html>

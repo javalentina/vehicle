@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS enterprise
     name VARCHAR(255) NOT NULL,
     city VARCHAR(255) NOT NULL
 );
+
 CREATE TABLE IF NOT EXISTS driver
 (
     id            SERIAL PRIMARY KEY,
@@ -40,19 +41,20 @@ CREATE TABLE IF NOT EXISTS users
 (
     id   SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
+    user_name VARCHAR(255) NOT NULL,
     role VARCHAR(255)   NOT NULL,
     password VARCHAR(255) NOT NULL
 );
-CREATE TABLE IF NOT EXISTS manager
-(
-    id   SERIAL PRIMARY KEY,
-    user_id       INT REFERENCES users (id)
+
+
+CREATE TABLE IF NOT EXISTS manager (
+    user_id   INT PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE
 );
-CREATE TABLE IF NOT EXISTS manager_enterprise
-(
-    manager_id       INT REFERENCES manager (id),
-    enterprise_id INT REFERENCES enterprise (id),
-    PRIMARY KEY (manager_id, enterprise_id)
+
+CREATE TABLE IF NOT EXISTS manager_enterprise (
+        manager_id   INT REFERENCES manager(user_id) ON DELETE CASCADE,
+        enterprise_id INT REFERENCES enterprise(id) ON DELETE CASCADE,
+        PRIMARY KEY (manager_id, enterprise_id)
 );
 
 
